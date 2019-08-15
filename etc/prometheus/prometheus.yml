@@ -42,6 +42,7 @@ scrape_configs:
     static_configs:
       - targets: 
         - nginx:80
+        - mysql:3306
         - prometheus:9090
         - grafana:3000
     relabel_configs:

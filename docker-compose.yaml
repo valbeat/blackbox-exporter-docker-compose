@@ -18,6 +18,12 @@ services:
         MYSQL_DATABASE: test
     ports:
       - 3306:3306
+  redis:
+    image: redis:latest
+    container_name: redis
+    command: redis-server --appendonly yes
+    ports:
+      - 6379:6379
   blackbox-exporter:
     image: prom/blackbox-exporter:v0.14.0
     container_name: blackbox-exporter

@@ -25,8 +25,6 @@ scrape_configs:
     static_configs:
       - targets: 
         - nginx:80
-        - prometheus:9090
-        - grafana:3000
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
@@ -41,10 +39,8 @@ scrape_configs:
       module: [tcp_connect]
     static_configs:
       - targets: 
-        - nginx:80
         - mysql:3306
-        - prometheus:9090
-        - grafana:3000
+        - redis:6379
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
